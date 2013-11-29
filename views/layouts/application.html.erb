@@ -15,7 +15,16 @@
       <p>Put things in the header</p>
       <a href="http://google.com">This is a link to google</a>
       <a href='me.html'>Me</a>
-
+    <form method='post' action="<%= @request.path %>">
+        First name: <input type="text" name="first_name" placeholder='first name'/><br />
+        <input type="submit" value="Submit" />
+        <%= @request.query.inspect %>
+          <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+    Hello there <%= @request.query['first_name'] %>
+  <% else %>
+    Enter thy name
+  <% end %>
+    </form>
     </p>
     <hr />
     <div>

@@ -24,8 +24,11 @@ Dir['views/*.html.erb'].each do |file|
 end
 
 
+
 ## ===========
 
 trap 'INT' do server.shutdown end
+
+
 
 server.start
